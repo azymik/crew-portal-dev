@@ -62,7 +62,7 @@ class _ValidityRecordsScreenState extends State<ValidityRecordsScreen> {
         if (constraints.maxWidth < 1000) {
           return Scaffold(
             appBar: AppBar(
-              title: const Text('Validity Records'),
+              title: const Text('Certificate of Proficiency'),
             ),
             drawer: const CustomDrawer(),
             body: Center(
