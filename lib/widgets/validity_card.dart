@@ -45,7 +45,7 @@ class ValidityCard extends StatelessWidget {
             style: const TextStyle(fontWeight: FontWeight.bold),
           ),
           subtitle: Text(code),
-          trailing: Text(expiry),
+          trailing: Text('Expire: $expiry'),
         ),
       );
     }
@@ -58,7 +58,7 @@ class ValidityCard extends StatelessWidget {
             style: const TextStyle(fontWeight: FontWeight.bold),
           ),
           subtitle: Text(code),
-          trailing: Text(expiry),
+          trailing: Text('Expire: $expiry'),
         ),
       );
     }
@@ -70,7 +70,7 @@ class ValidityCard extends StatelessWidget {
           style: const TextStyle(fontWeight: FontWeight.bold),
         ),
         subtitle: Text(code),
-        trailing: Text(expiry),
+        trailing: Text('Expired: $expiry'),
       ),
     );
   }

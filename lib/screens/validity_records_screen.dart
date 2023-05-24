@@ -36,7 +36,9 @@ class _ValidityRecordsScreenState extends State<ValidityRecordsScreen> {
     final validityCardList = qualifications.entries
         .map(
           (e) => ValidityCard(
-              code: e.value['last'] != '' ? e.value['last'] : e.key,
+              code: e.value['last'] != ''
+                  ? 'Last Done: ${e.value['last']}'
+                  : e.key,
               desc: e.value['desc']!,
               expiry: e.value['expiry']!),
         )
@@ -44,7 +46,9 @@ class _ValidityRecordsScreenState extends State<ValidityRecordsScreen> {
     final alandValidityCardList = alandQualifications.entries
         .map(
           (e) => ValidityCard(
-              code: e.value['last'] != '' ? e.value['last'] : e.key,
+              code: e.value['last'] != ''
+                  ? 'Last Done: ${e.value['last']}'
+                  : e.key,
               desc: e.value['desc']!,
               expiry: e.value['expiry']!),
         )
