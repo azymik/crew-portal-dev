@@ -56,7 +56,7 @@ class CustomDrawer extends StatelessWidget {
         ),
         ListTile(
           leading: const Icon(Icons.grading),
-          title: const Text('Validity Records'),
+          title: const Text('Certificate of Proficiency'),
           onTap: () {
             Navigator.of(context)
                 .pushReplacementNamed(ValidityRecordsScreen.routeName);
