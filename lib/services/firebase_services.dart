@@ -85,6 +85,9 @@ class FirebaseServices {
           'photo': null,
         },
       );
+      await HiveServices.putInBox('quals', 'qualifications', null);
+      await HiveServices.putAllInBox(
+          'autoland', {'qualifications': null, 'isSynced': null});
       await FirebaseAuth.instance.signOut();
       return;
     } catch (error) {

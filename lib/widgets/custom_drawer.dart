@@ -104,8 +104,10 @@ class CustomDrawer extends StatelessWidget {
           title: const Text('Logout'),
           onTap: () async {
             Navigator.of(context).pop();
-            FirebaseServices.signOut();
-            Navigator.of(context).pushReplacementNamed('/');
+            await FirebaseServices.signOut();
+            if (context.mounted) {
+              Navigator.of(context).pushReplacementNamed('/');
+            }
             return;
           },
         ),

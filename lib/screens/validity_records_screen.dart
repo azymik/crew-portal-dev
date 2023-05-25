@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import 'package:crew_portal_dev/services/validity_services.dart';
@@ -23,8 +22,8 @@ class _ValidityRecordsScreenState extends State<ValidityRecordsScreen> {
   void didChangeDependencies() async {
     super.didChangeDependencies();
     if (isInit) {
-      qualifications = await ValidityServices.getAndSaveQualifications(kIsWeb);
-      alandQualifications = await ValidityServices.getAndSaveAutoland(kIsWeb);
+      qualifications = await ValidityServices.getQualsFromBox();
+      alandQualifications = await ValidityServices.getAutolandFromBox();
       setState(() {
         isInit = false;
       });
@@ -84,7 +83,7 @@ class _ValidityRecordsScreenState extends State<ValidityRecordsScreen> {
         }
         return Scaffold(
           appBar: AppBar(
-            title: const Text('Validity Records'),
+            title: const Text('Certificate of Proficiency'),
           ),
           drawer: const CustomDrawer(),
           body: Padding(

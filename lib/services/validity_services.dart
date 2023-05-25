@@ -33,6 +33,16 @@ class ValidityServices {
     return qualifications;
   }
 
+  static Future<Map<dynamic, dynamic>> getQualsFromBox() async {
+    var qualifications =
+        await HiveServices.getFromBox('quals', 'qualifications');
+    if (qualifications != null) {
+      return qualifications;
+    } else {
+      return dummyQualification;
+    }
+  }
+
   static Future<void> updateAutoland(String value) async {
     final int expiryYear = int.parse(value.split('/')[2]) + 2000;
     final int expiryMonth = int.parse(value.split('/')[1]);
@@ -84,5 +94,15 @@ class ValidityServices {
     }
 
     return alandQualifications;
+  }
+
+  static Future<Map<dynamic, dynamic>> getAutolandFromBox() async {
+    var alandQualifications =
+        await HiveServices.getFromBox('autoland', 'qualifications');
+    if (alandQualifications != null) {
+      return alandQualifications;
+    } else {
+      return dummyAutoLandQualification;
+    }
   }
 }
